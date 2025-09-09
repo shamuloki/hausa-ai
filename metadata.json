@@ -1,0 +1,7 @@
+{
+  "description": "A conversational voice AI agent named Hausa AI that understands and speaks Hausa.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "name": "App"
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausa AI - Your Voice Assistant</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoA2A0ADUAAAD6AAA+wAAAAAAAAAACjwAAAOkNDA+uUAAAAFGSURBVHja7N1tSFtVAIbh15O/3mZNEY20BC3iN1gEtY0WltqFlZXaRjdCC3WRJbQlItu06KJLoQWhQ4s2RWgR2oUNgY2gIIi8+b73F5/cO2fumZzcm+59f2D/uOecyZ155s6Zc865C0REREREREREhAVx/xw8B9/An/A//A3/wz+QjA3w7+V/iBIy+T7Y5g5gYfD5gZ3Q4kAZ2Nwv4Gf4N/4B/4N/YGAf5Tso2O3kC+D+N2BnezQh/h/9E/mAxmS8gI/xo4G1v+CH+Bf+Ff+D/o+dM8gQ+3B8iG5uYAR+C/sT25gJc/CD8C5++BTfA5W/iD3g2bM/+CTFhT/BDvBv/BP/Bv/BfWB/P+DfsA+w/wDbQ0I8B/8G/8E/8G/8D/6FF/D/0z/gf/gP/gP/h39gQ7/hP9gH2B8Q2wFDe2A/+Bf+Cf+Df+B/8AmsH8j/h39gH2B/IDYGhvZAf/A/vAf/gf/Bv/A0/gf/gP9gH2B/IDYGhvZAf/A//Av/Bf/Bv/B0/gf/gP9gH2B/IDYGhvZAf/A//A//wz/wb/wX/6H//wf2A/YHBGbA0B7oD/4H/8P/8E/8G/8l/8P//wf2A/YHBGbA0B7oD/4P/8O/8E/8G/8l/8P//wf2A/YHBGbA0B7oD/4P/8P/8A/8G/8l/8P//wf2A/YHBGbA0B7oD/4P/8P/8E/8G/8l/8f/wf2A/YHBGbA0B7oD/4P/8P/8A/8G//F/+P/wD6w/4DYGBjaA/3B//B//A//xv/xf/g/fAPsDwhtgYF9oD/4H/4H/8O/8V/8H/4P7AP7A2JrYGAf9Af/w//wP/wP/8Z/8X/4P7APsD8gtgYG9kB/8D/8B//B//Bv/Bf/h/8B+wD7A2JrYGAf9Af/w//wb/wP/sZ/8X/4P7APsD8gtgYG9kB/8D/8D//DP/Bv/Bf/h/8B+wD7A2JrYGAf9Af/w//wb/wP/sZ/8X/4P7APsD8gtgYG9kB/8D/8D//Bv/Bf/Bf/B/+A+wP6A2BoY2gP9wf/wP/wP/8Z/8b/vH/gH1g/kNiDGxkB/8D/8D//DP/Bv/Bf/B/+B+wD7A2JrYGAf9Af/w//wb/wP/sZ/8b/vH/gH1g/kNiDGxkB/8D/8D//DP/Bv/Bf/B//Bf2A/YH9AbA0M7YH+4H/4H/6H/+A/2B/8D/9hf2B/QGwNDO2B/uB/+B/+h39g/0D+P/wP+wL7A2JrYGAf9Af/w//wP/wP+8P/sD/4H/6H/YH9AbE1MLEDen8R8wN2dYwNDO1pYAP8h9c43/8X/h8iIiIiIiIiIiKSL7WfAYmY9uKCYbCNAAAAAElFTkSuQmCC" type="image/png">
+    <meta name="theme-color" content="#2563eb">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glowing-mic {
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            animation: pulse-mic 1.5s infinite;
+        }
+        @keyframes pulse-mic {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
+        }
+        .pulse-border {
+            animation: pulse-border-animation 2s infinite;
+        }
+        @keyframes pulse-border-animation {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+        .animate-breathing-glow {
+            animation: breathing-glow 4s ease-in-out infinite;
+        }
+        @keyframes breathing-glow {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px 0px rgba(59, 130, 246, 0.5);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 0 25px 10px rgba(59, 130, 246, 0.7);
+            }
+        }
+        .animate-hand-draw {
+            animation: hand-move 4s ease-in-out infinite;
+        }
+        @keyframes hand-move {
+            0%, 100% { transform: translateX(-5px) rotate(-5deg); }
+            50% { transform: translateX(5px) rotate(5deg); }
+        }
+        .animate-drawing-line {
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: draw-line 4s ease-in-out infinite;
+        }
+        @keyframes draw-line {
+            0% { stroke-dashoffset: 150; }
+            40% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 0; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
